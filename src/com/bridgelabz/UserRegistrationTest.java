@@ -61,7 +61,23 @@ public class UserRegistrationTest {
         boolean result = userRegistration.phoneNumber("+91 8830029319");
         Assertions.assertEquals(false, result);
     }
+    /**
+     * test case for UC5 password rule 1(min 8 chara)
+     */
+    @Test
+    public void givenPassword_WhenInFormat_ShouldReturnTrue() {
+        boolean result = userRegistration.passwordRule1("registration");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPassword_WhenOurOfFormat_ShouldReturnFalse() {
+        boolean result = userRegistration.passwordRule1("reg");
+        Assertions.assertEquals(false, result);
+    }
+
 }
+
 
 
 
